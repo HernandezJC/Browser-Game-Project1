@@ -4,11 +4,192 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browser Game Project</title>
-
-    
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" async></script>
+    <title>Memory Card Game</title>
 </head>
 <body>
-    
+
+
+
+    <h1 class="page-title">Mix-Or-Match</h1>
+
+    <div class="overlay-text visible">
+        Click to Start
+    </div>
+
+    <div id="game-over-text" class="overlay-text">
+        GAME OVER 
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+
+    <div id="victory-text" class="overlay-text">
+        VICTORY
+        <span class="overlay-text-small">Click to Restart</span>
+    </div>
+
+
+    <div class="game-container">
+        <div class="game-info-container">
+            <div class="game-info">
+                Time <span id="time-remaining">100</span>
+            </div>
+            <div class="game-info">
+                Flips <span id="flips">0</span>
+            </div>
+        </div>
+
+
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/blue.jpg" alt="blue card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/blue.jpg" alt="blue card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/green.jpg" alt="green card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/green.jpg" alt="green card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/grey.jpg" alt="grey card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/grey.jpg" alt="grey card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/orange.jpg" alt="orange card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/orange.jpg" alt="orange card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/pink.jpg" alt="pink card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/pink.jpg" alt="pink card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/purple.jpg" alt="purple card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/purple.jpg" alt="purple card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/rainbow.jpg" alt="rainbow card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/rainbow.jpg" alt="rainbow card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/red.jpg" alt="red card">
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-back card-face">
+            <img class="back-of-card" src="assets/back.jpg">
+        </div>
+        <div class="card-front card-face">
+            <img class="card-value" src="assets/red.jpg" alt="red card">
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
 </body>
 </html>
