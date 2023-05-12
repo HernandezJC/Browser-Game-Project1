@@ -42,7 +42,7 @@ body {
 
 .card {
     position: relative;
-    background-color: black;
+    /* background-color: black; */
     height: 175px;
     width: 125px;
 }
@@ -84,6 +84,7 @@ body {
     align-items: center;
     z-index: 100;
     color: red;
+
     
 }
 
@@ -97,7 +98,7 @@ body {
     animation: overlay-grow 500ms forwards;
 }
 
-@keyframes overlay-grow {
+/* @keyframes overlay-grow {
     from {
         background-color: rgba(0,0,0,0);
         font-size: 0;
@@ -118,11 +119,12 @@ body {
     75% {
         transform: rotate(30deg);
     }
-}
+} */
 
 .card-back {
     background-color: black;
     border-color: orange;
+    transform: rotateY(0);
 }
 
 .card-front {
@@ -173,3 +175,9 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+
+
+
+
+
