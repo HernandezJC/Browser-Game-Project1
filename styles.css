@@ -140,10 +140,10 @@ body {
     transform: scale(1);
 }
 
-.cob-web {
+.back-of-card {
     position: absolute;
-    width: 47px;
-    height: 47px;
+    /* width: 47px;
+    height: 47px; */
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
