@@ -1,15 +1,64 @@
+// Original js code
 
 
 let origArray = [
-    
-]
+    "back.jpg",
+    "back.jpg",
+    "blue.jpg",
+    "blue.jpg", 
+    "green.jpg",
+    "green.jpg",
+    "grey.jpg",
+    "grey.jpg",
+    "orange.jpg",
+    "orange.jpg",
+    "pink.jpg",
+    "pink.jpg",
+    "purple.jpg",
+    "purple.jpg",
+    "rainbow.jpg",
+    "rainbow.jpg",
+    "red.jpg",
+    "red.jpg",
+   ];
+   
 
-let shuffledcardArray = [
-]
+   //You're going to use this array to store the cards after you shuffle them
 
 
+   let shuffledcardArray = [];
+   
+   
+//    //A task is to add the shuffledCardArray cards to the board while at the same time making all the card backs all the same
+// new function   
+
+   function shuffleCards(cardsArray) {
+   
+    for (let i = cardsArray.length - 1; i > 0; i--) {
+        let randIndex = Math.floor(Math.random() * (i + 1));
+        [cardsArray[i], cardsArray[randIndex]] = [cardsArray[randIndex], cardsArray[i]];
+    }
+   
+    let cardElements = document.getElementsByClassName('card');
+    for (let i = 0; i < cardElements.length; i++) {
+        let card = cardElements[i];
+        let cardValue = cardsArray[i];
+        let cardBack = card.getElementsByClassName('card-back')[0];
+        let cardValueImg = document.createElement('img');
+        cardValueImg.classList.add('card-value');
+        cardValueImg.src = `img/${cardValue}`;
+        card.appendChild(cardValueImg);
+        cardBack.style.backgroundImage = `url('img/${cardValue}')`;
+    }
+}
 
 
+   //You have to find
+   
+   
+   //You'll see that you pass in the origArray with the "let game = new MixOrMatch etc." below the class
+
+   
 
 class MixOrMatch {
     constructor(totalTime, cards) {
@@ -18,7 +67,6 @@ class MixOrMatch {
         this.timeRemaining = totalTime;
         this.timer = document.getElementById('time-remaining');
         this.ticker = document.getElementById('flips');
-        this.audioController = new AudioController();
     }
 
     startGame() {
@@ -28,7 +76,6 @@ class MixOrMatch {
         this.matchedCards = [];
         this.busy = true;
         setTimeout(() => {
-            this.audioController.startMusic();
             this.shuffleCards(this.cardsArray);
             this.countdown = this.startCountdown();
             this.busy = false;
@@ -47,12 +94,10 @@ class MixOrMatch {
     }
     gameOver() {
         clearInterval(this.countdown);
-        this.audioController.gameOver();
         document.getElementById('game-over-text').classList.add('visible');
     }
     victory() {
         clearInterval(this.countdown);
-        this.audioController.victory();
         document.getElementById('victory-text').classList.add('visible');
     }
     hideCards() {
@@ -63,7 +108,6 @@ class MixOrMatch {
     }
     flipCard(card) {
         if(this.canFlipCard(card)) {
-            this.audioController.flip();
             this.totalClicks++;
             this.ticker.innerText = this.totalClicks;
             card.classList.add('visible');
@@ -141,4 +185,23 @@ function ready() {
 }
 
 
-let game = new MixOrMatch(origArray)
+let game = new MixOrMatch(origArray);
+
+
+console.log(game);
+
+
+let startClick = document.getElementById("start-click");
+
+
+
+
+
+
+
+//This will show you errors in the console, which is a good starting point to fix issues in the MixOrMatch class
+
+
+startClick.addEventListener("click", ()=>{console.log("game"),
+ game.startGame()});
+

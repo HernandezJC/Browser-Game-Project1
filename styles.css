@@ -27,7 +27,7 @@ body {
 }
 
 .game-info {
-    color: lightsalmon;
+    color: black;
     font-size: 4em;
 }
 
@@ -150,8 +150,8 @@ body {
 }
 
 .card-face:hover .back-of-card {
-    width: 52px;
-    height: 52px;
+    /* width: 52px;
+    height: 52px; */
 }
 
 
