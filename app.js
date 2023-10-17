@@ -32,25 +32,58 @@ let origArray = [
 //    //A task is to add the shuffledCardArray cards to the board while at the same time making all the card backs all the same
 // new function   
 
-   function shuffleCards(cardsArray) {
+//    function shuffleCards(cardsArray) {
    
-    for (let i = cardsArray.length - 1; i > 0; i--) {
-        let randIndex = Math.floor(Math.random() * (i + 1));
-        [cardsArray[i], cardsArray[randIndex]] = [cardsArray[randIndex], cardsArray[i]];
-    }
+//     for (let i = cardsArray.length - 1; i > 0; i--) {
+//         let randIndex = Math.floor(Math.random() * (i + 1));
+//         [cardsArray[i], cardsArray[randIndex]] = [cardsArray[randIndex], cardsArray[i]];
+//     }
    
-    let cardElements = document.getElementsByClassName('card');
-    for (let i = 0; i < cardElements.length; i++) {
-        let card = cardElements[i];
-        let cardValue = cardsArray[i];
-        let cardBack = card.getElementsByClassName('card-back')[0];
-        let cardValueImg = document.createElement('img');
-        cardValueImg.classList.add('card-value');
-        cardValueImg.src = `img/${cardValue}`;
-        card.appendChild(cardValueImg);
-        cardBack.style.backgroundImage = `url('img/${cardValue}')`;
-    }
+//     let cardElements = document.getElementsByClassName('card');
+//     for (let i = 0; i < cardElements.length; i++) {
+//         let card = cardElements[i];
+//         let cardValue = cardsArray[i];
+//         let cardBack = card.getElementsByClassName('card-back')[0];
+//         let cardValueImg = document.createElement('img');
+//         cardValueImg.classList.add('card-value');
+//         cardValueImg.src = `img/${cardValue}`;
+//         card.appendChild(cardValueImg);
+//         cardBack.style.backgroundImage = `url('img/${cardValue}')`;
+//     }
+// }
+
+
+startGame() {
+    this.totalClicks = 0;
+    this.timeRemaining = this.totalTime;
+    this.cardToCheck = null;
+    this.matchedCards = [];
+    this.busy = true;
+    
+    // Shuffle the cards and assign them to shuffledcardArray
+    this.shuffledcardArray = this.shuffleCards(this.cardsArray.slice());
+    
+    setTimeout(() => {
+        // Iterate over the cards and add the images from the shuffledcardArray
+        this.cardsArray.forEach((card, index) => {
+            const cardValue = card.querySelector('.card-value');
+            cardValue.src = `./img/${this.shuffledcardArray[index]}`;
+            card.classList.remove('visible');
+            card.classList.remove('matched');
+        });
+        this.countdown = this.startCountdown();
+        this.busy = false;
+    }, 500)
+    
+    // Set the background image of all the cards to the same image
+    const gameBoard = document.getElementById('game-board');
+    gameBoard.style.backgroundImage = 'url("./img/back.jpg")';
+    
+    this.timer.innerText = this.timeRemaining; 
+    this.ticker.innerText = this.totalClicks;
 }
+
+
 
 
    //You have to find
